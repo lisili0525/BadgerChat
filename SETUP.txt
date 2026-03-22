@@ -1,0 +1,22 @@
+BadgerChat — local setup (after you download or clone this folder)
+================================================================
+
+Frontend (Vite + React)
+  cd to this folder
+  npm install
+  npm run dev
+  Open http://localhost:5173
+
+Backend (Django API)
+  cd backend
+  python3 -m venv .venv
+  source .venv/bin/activate          (Windows: .venv\Scripts\activate)
+  pip install -r requirements.txt
+  python manage.py migrate
+  python manage.py runserver
+
+Run both frontend and backend together for the full app. The Vite dev server proxies /api to http://127.0.0.1:8000.
+
+Register/login uses a 7-digit PIN. Optional: python manage.py createsuperuser for Django admin at http://127.0.0.1:8000/admin/
+
+What was excluded from export: node_modules, backend/.venv, backend/db.sqlite3, dist, .git — reinstall with npm install and pip install.

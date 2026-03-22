@@ -1,0 +1,18 @@
+Summary
+Built a React + Vite “BadgerChat” app that consumes a real REST API to browse chatrooms, read paginated messages, and manage user-authenticated posting.
+
+What I did
+- Fetched chatroom list and created dynamic routes per room.
+- Implemented a responsive UI with React-Bootstrap (layout, cards, forms, pagination).
+- Added login/register/logout flows with validation and API integration.
+- Managed auth state with React context + sessionStorage so refreshes persist login.
+- Built message listing with pagination and empty-state messaging.
+- Added authenticated post creation and owner-only delete buttons.
+
+How I did it
+- Used fetch with X-CS571-ID headers and credentials: "include" for auth-required calls.
+- Registered users with controlled inputs, validated 7-digit pins, and navigated on success.
+- Logged in users with uncontrolled inputs, stored { username } in context + sessionStorage.
+- Used useEffect to reload messages when chatroom or page changes.
+- Passed a delete callback from BadgerChatroom to BadgerMessage to remove owned posts.
+- Ensured form accessibility with htmlFor/id pairs.
