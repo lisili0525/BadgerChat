@@ -1,6 +1,16 @@
 # BadgerChat
 
-BadgerChat is a small multi-room chat web app: browse themed chatrooms, read messages with pagination, and—when logged in—post and delete your own messages. It started as a university React course project; it now runs entirely on **your machine** using the **Django REST API** and **SQLite** database included in this repo (no shared class server).
+BadgerChat is a small multi-room chat web app: browse themed chatrooms, read messages with pagination, and—when logged in—post and delete your own messages.
+
+## Origin (course project)
+
+This codebase **grew out of an original university assignment**, not a greenfield product:
+
+- **Course:** **CS571 — Web Programming** at the **University of Wisconsin–Madison** (the starter and [LICENSE](LICENSE) line refer to **CS571, Fall 2024**).
+- **Assignment:** **Homework 6 — “BadgerChat”**, a cumulative **React** exercise. The course provided a **Vite** starter (with Bootstrap and React Router already wired up) and a **hosted class API** at `cs571api.cs.wisc.edu` so every student used the same backend and shared chat data.
+- **What students built:** The UI for chatrooms, message pagination, registration and login (7-digit PIN), session-style “logged in” behavior, creating posts, and deleting your own posts—matching the behaviors described in the old assignment handout and in `_figures/`.
+
+**What changed in this repo:** The shared course server is **no longer used**. The React app has been pointed at a **local [Django REST Framework](https://www.django-rest-framework.org/)** backend with a **SQLite** database shipped in this repository (`backend/`). That way the app is self-contained for development and deployment; `API_DOCUMENTATION.md` still describes the **legacy course API** shape for reference, but **authoritative behavior** for this fork is implemented in `backend/api/`.
 
 ## Stack
 
